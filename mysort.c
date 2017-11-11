@@ -86,14 +86,13 @@ Link* sort(Link* x) {
         y = x;
         z = y->next;
         while (z != NULL) {
-            if (y->data >= z->data) {
+            if (y->data > z->data) {
                 t = z->next;
                 changed = TRUE;
                 y->next = t;
                 z->next = y;
                 if (p == NULL) {
                     x = z;
-                    changed = FALSE;
                   }
                 else
                     p->next = z;
