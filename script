@@ -1,0 +1,10 @@
+#!/bin/bash
+ ./../../mysort $1 2
+
+sort_returnCode=$?
+
+if [ $sort_returnCode -ne 0 ];then
+    exit 0;
+else
+    exit 1;
+fi

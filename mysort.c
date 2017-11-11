@@ -33,7 +33,7 @@ int main(int argc, char* argv[])
     FILE* fp = fopen(argv[1], "r");
     if (fp == NULL) {
         printf("Error: can't open file: %s\n", argv[1]);
-        exit(1); 
+        exit(1);
     }
 
     while (1) {
@@ -91,8 +91,10 @@ Link* sort(Link* x) {
                 changed = TRUE;
                 y->next = t;
                 z->next = y;
-                if (p == NULL) 
+                if (p == NULL) {
                     x = z;
+                    changed = FALSE;
+                  }
                 else
                     p->next = z;
                 p = z;
@@ -121,4 +123,3 @@ void catch_alarm() {
     printf("Error: timeout\n");
     exit(1);
 }
-
